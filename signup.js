@@ -18,7 +18,6 @@ function signUp() {
     localStorage.setItem("userValues", JSON.stringify(user));
     localStorage.setItem("login", true);
     window.location.replace("./index.html");
-
 }
 
 function verifyUser() {
