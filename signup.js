@@ -3,7 +3,8 @@ let signEmail = document.querySelector("#email");
 let signpassword = document.querySelector("#password");
 
 
-function signUp() {
+function signUp(event) {
+    event.preventDefault()
     console.log("started");
     console.log(signName.value, signEmail.value, signpassword.value);
 
