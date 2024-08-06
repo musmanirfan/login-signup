@@ -1,33 +1,36 @@
+// Get input fields
 let signName = document.querySelector("#text");
 let signEmail = document.querySelector("#email");
-let signpassword = document.querySelector("#password");
+let signPassword = document.querySelector("#password");
 
-
+// Signup function to store user data and login status
 function signUp(event) {
-    event.preventDefault()
-    console.log("started");
-    console.log(signName.value, signEmail.value, signpassword.value);
+    event.preventDefault(); // Prevent form submission
 
-    if (signName === "" && signEmail === "" && signpassword === "") return
-    console.log("working");
+    // Check if any field is empty
+    if (signName.value === "" || signEmail.value === "" || signPassword.value === "") return;
 
     let user = {
         signName: signName.value,
         signEmail: signEmail.value,
-        signpassword: signpassword.value
+        signPassword: signPassword.value
     };
+    
+    // Store user data and login status
     localStorage.setItem("userValues", JSON.stringify(user));
-    localStorage.setItem("login", true);
+    localStorage.setItem("login", "true");
     window.location.replace("./index.html");
 }
 
+// Verify if the user is already logged in
 function verifyUser() {
     let loggedIn = localStorage.getItem("login");
-    if (loggedIn === true) {
+    if (loggedIn === "true") {
         window.location.replace("./index.html");
     }
 }
 
+// Verify user on page load
 window.addEventListener("load", function () {
     verifyUser();
-})
+});
