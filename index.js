@@ -1,7 +1,7 @@
 function verifyUser() {
     const isLoggedIn = localStorage.getItem("login");
     if (isLoggedIn !== "true") {
-        window.location.replace("./signup.html");
+        window.location.replace("./login.html");
     }
 }
 
